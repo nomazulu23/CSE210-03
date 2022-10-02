@@ -68,7 +68,7 @@ class Puzzle:
 
             elif guess not in self._word:
 
-                if len(self._jumper) > 0:
+                if len(self._jumper._parachute) > 0:
 
                     self._jumper.cut_line()
                     self._guessed_letters.append(guess)

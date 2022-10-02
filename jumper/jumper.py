@@ -7,16 +7,18 @@
 
 class Jumper:
     def __init__(self):
-      self._parachute = [ "_____", "/_____\\", "\     /", "\   /"]
-      self._person = [ "0 ", "/ | \\", " / \\ ", "^^^^^^^"]
+      self._parachute = [ "_____", "/_____\\", "\     /", " \   /"]
+      self._person = [ "   0", " / | \\", "  / \\ ", "^^^^^^^^"]
 
 
     def display_parachute(self):
-        print(self._parachute)
+        for i in self._parachute:
+            print(i)
           
 
     def display_person(self):
-        print(self._person)
+        for i in self._person:
+            print(i)
 
     def cut_line(self):
         self._parachute.pop(0)
