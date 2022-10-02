@@ -1,8 +1,8 @@
 class TerminalService:
 
     def read_letter(self, prompt):  # reading the letter picked
-
-        return input(prompt)
+        letter = input(prompt)
+        return letter.lower()
 
     def write_text(self, text):  # writing text for drawing
 

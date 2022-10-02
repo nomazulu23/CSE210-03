@@ -1,3 +1,4 @@
+
 #the Jumper code should have the following responsibility:
 # 1) draw a line of the parachute if correct letter is picked 
 # 2) Remove a line if incorrect letter is picked
@@ -6,82 +7,16 @@
 
 class Jumper:
     def __init__(self):
-        self._draw_line
-        self._remove_line
-        self._parachute
+      self._parachute = [ "_____", "/_____\\", "\     /", "\   /"]
+      self._person = [ "0 ", "/ | \\", " / \\ ", "^^^^^^^"]
 
 
-def display_parachute(self, tries):
-    self._parachute = [ """
-                 _____
-                /_____\
-                \     /
-                 \   /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-    """
-                /_____\
-                \     /
-                 \   /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-    """          _____\
-                \     /
-                 \   /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-    """               \
-                \     /
-                 \   /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-    """
-                \     /
-                 \   /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-    """               /
-                 \   /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-    """
-                 \   /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-    """
-                    /
-                   0
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """,
-    """
-                   x
-                 / | \
-                  / \
-                ^^^^^^^^^
-    """, 
-]
+    def display_parachute(self):
+        print(self._parachute)
+          
 
-    return self._parachute[tries]
+    def display_person(self):
+        print(self._person)
+
+    def cut_line(self):
+        self._parachute.pop(0)
