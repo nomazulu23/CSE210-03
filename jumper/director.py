@@ -17,11 +17,12 @@ class Director:
         self._puzzle = Puzzle()
         self._is_playing = True
 
+
     def start_game(self):
         while self._is_playing:
             self._getInputs()
             self._updates()
-            self._outputs()
+            
 
     def _getInputs(self):
         self._puzzle.letter()
@@ -34,5 +35,3 @@ class Director:
         elif self._puzzle._validate == 2:
             self._is_playing = False
 
-    def _outputs(self):
-        print("Whose ready to Jump!")

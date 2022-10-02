@@ -18,7 +18,6 @@
 
 
 from terminal_service import TerminalService
-
 from jumper import Jumper
 import random
 
@@ -30,12 +29,14 @@ class Puzzle:
 
         self.terminal_service = TerminalService()
         self._jumper = Jumper()
-        self._word_list = ["Beetroot", "Cucumber",  "Broccoli", ]
+        self._word_list = ["beetroot", "cucumber",  "broccoli", ]
         self._picked_word = ""
         self._word = []
         self._blank_word = []
         self._guessed_letters = []
         self._validate = 0
+        self.get_word()
+        self.fill_list()
 
     def get_word(self):
         self._picked_word = random.choice(self._word_list)
@@ -54,48 +55,28 @@ class Puzzle:
         if len(guess) == 1 and guess.isalpha():  # guessing the letter
 
             if guess in self._word:
-
-                index = self._word.index("guess")
-
-                self._blank_word[index] = self._word[index]
-
+                for i in range(len(self._word)):
+                    if guess == self._word[i]:
+                        self._blank_word[i] = self._word[i]
                 print("".join(self._blank_word))
-
                 self._jumper.display_parachute()
-
                 self._jumper.display_person()
 
 
-            elif guess not in self._word:
-
+            else:
                 if len(self._jumper._parachute) > 0:
-
                     self._jumper.cut_line()
                     self._guessed_letters.append(guess)
-
+                    print("".join(self._blank_word))
                     self._jumper.display_parachute()
-
                     self._jumper.display_person()
 
         else:
-
-            print("Not a valid guess.")
 
             self._jumper.display_parachute()
 
             self._jumper.display_person()
             print(self._guessed_word)
-
-
-    def word_completion(self):
-
-        self._guessed_word = ["_"] * len(self._picked_word)
-
-        guessed = False
-
-        guessed_letters = []
-
-        tries = 8
 
 
     def end_game(self):
@@ -106,7 +87,7 @@ class Puzzle:
             self._validate = 1
 
         elif len(self._jumper._parachute) == 0:
-
+            self._jumper._person[0] = "   X"
             print("You lose! Game Over")
             self._validate = 2
 
