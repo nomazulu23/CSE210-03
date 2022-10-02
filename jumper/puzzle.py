@@ -22,7 +22,7 @@ class Puzzle:
         word = random.choice(self._word_list)
         return self._word_list.lower()
 
-    def letter(self):
+    def letter(self):   #randomly picking letters of the secret word
         self._picked_word = random.randint(a, z)
         return self._picked_word.lower()
 
@@ -33,6 +33,7 @@ class Puzzle:
         tries = 8
 
     def guess_process(self,):
+        guess_count = 0
         while _is_playing == True:
             if guess_letter == self._picked_word:
                 letter = self._guessed_word

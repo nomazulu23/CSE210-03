@@ -9,9 +9,9 @@
 # 6) output or displaying results
 
 
-from jumper.terminal_service import terminal_service
-from jumper.puzzle import Puzzle
-from jumper.jumper import Jumper
+from terminal_service import TerminalService
+from puzzle import Puzzle
+from jumper import Jumper
 
 
 class Director:
@@ -31,6 +31,7 @@ class Director:
         while not guessed and tries > 0:
             guess = input("Guess a letter [a-z]: ").lower
             guess_letter = self._terminal_service.read_letter
+            
             if len(guess) == 1 and guess.isalpha():  # guessing the letter
                 if guess in guessed_letters:
                     print(guess)
@@ -70,6 +71,7 @@ class Director:
             print(self._guessed_word)
 
     def _updates(self):
+        pass
 
     def _outputs(self):
         print("Whose ready to Jump!")
