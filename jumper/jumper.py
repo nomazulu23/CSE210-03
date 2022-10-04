@@ -8,7 +8,7 @@
 class Jumper:
     def __init__(self):
         self._parachute = [" _____", "/_____\\", "\     /", " \   /"]
-        self._person = ["  0 ", " / | \\", "  / \\ ", "^^^^^^^^"]
+        self._person = ["   0 ", " / | \\", "  / \\ ", "^^^^^^^^"]
 
     def display_parachute(self):
         for i in self._parachute:
